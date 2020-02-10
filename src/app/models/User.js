@@ -8,15 +8,11 @@ class User extends Model {
         username: Sequelize.STRING,
         password: Sequelize.VIRTUAL,
         password_hash: Sequelize.STRING,
-        nome: Sequelize.STRING,
-        idade: Sequelize.INTEGER,
-        sexo: Sequelize.STRING,
-        peso: Sequelize.FLOAT,
-        estatura: Sequelize.FLOAT,
-        imc: Sequelize.FLOAT
+        nome: Sequelize.STRING
       },
       {
-        sequelize
+        sequelize,
+        modelName: "user"
       }
     );
 

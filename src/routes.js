@@ -12,6 +12,6 @@ routes.post("/sessions", SessionController.store);
 
 routes.use(authMiddleware);
 
-routes.put("/cadastro", UserController.update);
+routes.put("/cadastro", authMiddleware, UserController.update);
 
 export default routes;
