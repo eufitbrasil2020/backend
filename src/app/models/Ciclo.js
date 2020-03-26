@@ -1,11 +1,12 @@
 import Sequelize, { Model } from "sequelize";
 
-class FcPaUser extends Model {
+class Ciclo extends Model {
   static init(sequelize) {
     super.init(
       {
-        fc: Sequelize.INTEGER,
-        pa: Sequelize.INTEGER
+        dia: Sequelize.INTEGER,
+        mes: Sequelize.INTEGER,
+        ano: Sequelize.INTEGER
       },
       {
         sequelize
@@ -16,4 +17,4 @@ class FcPaUser extends Model {
   }
 }
 
-export default FcPaUser;
+export default Ciclo;

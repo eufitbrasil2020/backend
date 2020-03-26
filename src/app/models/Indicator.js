@@ -13,6 +13,8 @@ class Indicator extends Model {
         sequelize
       }
     );
+
+    return this;
   }
 }
 

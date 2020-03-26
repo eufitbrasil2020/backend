@@ -1,17 +1,21 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("fcpa", {
+    return queryInterface.createTable("ciclo", {
       id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         primaryKey: true,
-        autoIncrement: true,
-        allowNull: false
+        autoIncrement: true
       },
-      fc: {
+      dia: {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      pa: {
+      mes: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      ano: {
         type: Sequelize.INTEGER,
         allowNull: false
       },
@@ -27,6 +31,6 @@ module.exports = {
   },
 
   down: queryInterface => {
-    return queryInterface.dropTable("fcpa");
+    return queryInterface.dropTable("ciclo");
   }
 };

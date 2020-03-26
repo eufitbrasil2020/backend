@@ -16,7 +16,7 @@ class UserController {
     }
 
     const userExists = await User.findOne({
-      where: { username }
+      where: { username: req.body.username }
     });
 
     if (userExists) {
@@ -63,15 +63,11 @@ class UserController {
       return res.status(401).json({ error: "Senha incorreta" });
     }
 
-    const { id, nome, password } = await User.update(req.body, {
+    const updated = await User.update(req.body, {
       where: { username }
     });
 
-    return res.json({
-      id,
-      nome,
-      password
-    });
+    return res.json(updated);
   }
 }
 
